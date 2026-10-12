@@ -24,17 +24,17 @@ getwd() #provjera jesmo li dobro postavili
 library(readxl) # učitavanje paketa
 
 # Učitavanje Excel tablice o kornjačama
-kornjace <- read_excel("03_Rad_s_podacima/kornjace_tidy.xlsx")
+kornjace <- read_excel("kornjace_tidy.xlsx")
 View(kornjace) # ili klik na objekt u environmentu
 
 # Pregled prvih redaka podataka
-head(kornjace)
+head()
 
 # Pregled zadnjih redaka podataka
-tail(kornjace)
+tail()
 
 # Tipovi podataka - provjera strukture
-str(kornjace)
+struktura()
 
 ### Izvlačenje pojedinačnih stupaca i redaka iz data frame-a
 
@@ -54,6 +54,7 @@ print(kornjaca_S1)
 
 # Izdvajanje pojedinačne vrijednosti - primjer:  ime kornjače  koja ima sample_ID S5!
 ime_S5 <- kornjace$turtle_name[kornjace$sample_ID == "S5"]
+print(ime_S5)
 
 # Zadatak: Izdvojite lokaciju kornjača kao vektor u poseban objekt!
 
@@ -71,21 +72,8 @@ kornjace$age <- factor(kornjace$age,
                        ordered = TRUE)
 
 # Provjera
-str(kornjace)
 levels(kornjace$age)
 levels(kornjace$rescue_centre)
-
-# Izvlačenje pojedinačnih stupaca i redaka iz data frame-a
-
-# Stupac predstavlja varijable
-dob_kornjaca <- kornjace$age  #data.frame$stupac
-print(dob_kornjaca)
-class(dob_kornjaca)
-
-# Drugi način izvlačenja stupaca iz data frame-a
-ime_kornjaca <- kornjace[,3]
-print(ime_kornjaca)
-class(ime_kornjaca)
 
 # Zadatak: Pretvorite ostale kategoričke varijable u faktore odgovarajućeg tipa!
 
