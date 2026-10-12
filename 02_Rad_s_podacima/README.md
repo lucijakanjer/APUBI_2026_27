@@ -1,7 +1,6 @@
 Rad s objektima i podacima u R-u
 ================
 dr. sc. Lucija Kanjer, e-mail: <lucija.kanjer@biol.pmf.hr>
-2025/26
 
 ## Sadržaj današnje vježbe
 
