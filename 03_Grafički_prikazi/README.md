@@ -61,21 +61,7 @@ library(dplyr) # paket za manipulaciju tablicama
 Više o paketu palmerpenguins:
 <https://allisonhorst.github.io/palmerpenguins/>
 
-``` r
-# Učitavanje seta podataka o pingvinima
-library(palmerpenguins)
-```
 
-    ## 
-    ## Attaching package: 'palmerpenguins'
-
-    ## The following objects are masked from 'package:datasets':
-    ## 
-    ##     penguins, penguins_raw
-
-``` r
-penguins <- penguins
-```
 
 ## Primjer 1: Histogram
 
@@ -108,17 +94,6 @@ hist(penguins$body_mass_g,
 
 ![](README_files/figure-gfm/hist%20axes-1.png)<!-- -->
 
-## Izrada histograma pomoću ggplota
-
-``` r
-# ggplot2 histogram
-ggplot(penguins, aes(x = body_mass_g)) +
-  geom_histogram(binwidth = 500, fill = "lightblue", color = "black") +
-  labs(title = "Distribucija mase tijela pingvina (ggplot2)", 
-       x = "Masa tijela (g)")
-```
-
-<img src="README_files/figure-gfm/hist ggplot-1.png" height="60%" />
 
 ## Primjer 2: Stupičasti dijagram (*bar plot*)
 
@@ -148,18 +123,6 @@ barplot(species_count,
 
 ![](README_files/figure-gfm/baseR%20barplot-1.png)<!-- -->
 
-## 
-
-``` r
-# ggplot2 barplot
-ggplot(penguins, aes(x = species)) +
-  geom_bar(fill = "darkorange") +
-  labs(title = "Distribucija pingvina po vrsti (ggplot2)", 
-       x = "Vrsta", 
-       y = "Broj pingvina")
-```
-
-![](README_files/figure-gfm/baseR%20ggplot-1.png)<!-- -->
 
 ## Primjer 3: Točkasti dijagram (*scatter plot*)
 
@@ -174,18 +137,6 @@ plot(penguins$bill_length_mm, penguins$bill_depth_mm,
 
 ![](README_files/figure-gfm/baseR%20scatter-1.png)<!-- -->
 
-## 
-
-``` r
-# ggplot2 scatter plot
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
-  geom_point(color = "darkgreen", size = 2) +
-  labs(title = "Odnos dužine i dubine kljuna (ggplot2)", 
-       x = "Dužina kljuna (mm)", 
-       y = "Dubina kljuna (mm)")
-```
-
-![](README_files/figure-gfm/gg%20scatter-1.png)<!-- -->
 
 ## ggplot2 paket - slojevi i estetika
 
@@ -206,6 +157,24 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 - Omogućava kombiniranje više plotova u jedan prikaz.
 - Visok stupanj prilagodbe: boje, naslovi, osi, oznake, veličina i drugi
   estetski elementi.
+
+"The Evolution of ggplot2" -> <https://www.cedricscherer.com/2019/05/17/the-evolution-of-a-ggplot/>
+
+  ``` r
+# Učitavanje seta podataka o pingvinima
+library(palmerpenguins)
+```
+
+    ## 
+    ## Attaching package: 'palmerpenguins'
+
+    ## The following objects are masked from 'package:datasets':
+    ## 
+    ##     penguins, penguins_raw
+
+``` r
+penguins <- penguins
+```
 
 ### 1. Osnovni graf bez slojeva
 
